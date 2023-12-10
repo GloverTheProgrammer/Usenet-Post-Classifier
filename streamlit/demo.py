@@ -6,7 +6,7 @@ import nltk
 from nltk.corpus import stopwords
 import string
 
-@st.cache_resource(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     model_path = 'multinomial_nb_model.joblib'
     return load(model_path)
