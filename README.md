@@ -36,6 +36,8 @@ Before you begin, ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
+   Ensure that you have all the necessary packages installed as listed in the `requirements.txt` file.
+
 ### Running the Application
 
 1. **Start the Streamlit Server**
@@ -67,7 +69,3 @@ Contributions to improve this project are welcome. Please adhere to the project'
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to copy and paste this text directly into your `readme.txt` file. Adjust any details as necessary to better fit your project's specifics.
