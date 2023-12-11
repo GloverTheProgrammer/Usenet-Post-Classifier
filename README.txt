@@ -1,4 +1,4 @@
-# Usenet Post Classifier - Streamlit App
+#Usenet Post Classifier - Streamlit App
 
 This Streamlit application, part of the Usenet Post Classifier project, is designed to classify Usenet posts into various categories using a pre-trained Multinomial Naive Bayes model.
 
