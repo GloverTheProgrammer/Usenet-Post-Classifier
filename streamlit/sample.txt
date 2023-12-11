@@ -1,4 +1,3 @@
-**Do not input, Newsgroups: sci.space**
 Path: example.server.edu!news.example.com!example-news-server.net!example-node.net!example-provider.com!example-hosting-site.com!example-user
 From: example@user.com (John Doe)
 Subject: Seeking Information: White Sands Tracking Facility
