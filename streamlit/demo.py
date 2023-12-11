@@ -6,17 +6,17 @@ import nltk
 from nltk.corpus import stopwords
 import string
 
-
+#Load Model
 def load_model():
     model_path = 'multinomial_nb_model.joblib'
     return load(model_path)
 
-
+# Load Feature Names
 def load_feature_names():
     feature_names_df = pd.read_csv('feature_names.csv')
     return feature_names_df['title'].tolist()
 
-
+# Preprocess Text Input by User exactly like the training data (Bag of Words)
 def preprocess_text(text, feature_names):
     words = text.split()
     words = [word.lower() for word in words if len(word) > 2 and word.lower() not in stop_words]
@@ -26,22 +26,21 @@ def preprocess_text(text, feature_names):
         features[i] = word_counts.get(word, 0)
     return features.reshape(1, -1)
 
-
-
+# Load Target Names
 def load_target_names():
     return np.load('target_names.npy', allow_pickle=True)
 
-
+# Load Stop Words
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english')) | set(string.punctuation)
 
 
-
+# Load Model, Feature Names, and Target Names
 model = load_model()
 feature_names = load_feature_names()
 target_names = load_target_names()
 
-
+# Streamlit Layout
 st.title('Usenet Post Classifier')
 
 with st.sidebar:
@@ -51,7 +50,6 @@ with st.sidebar:
 st.markdown("""
 This tool classifies Usenet posts into categories. Please follow the format below for the input:
 """)
-
 
 st.markdown("""
 **Input Format:**
@@ -75,6 +73,8 @@ Content of the post goes here...
 ```
 """)
 
+
+# Take in User Input and Classify
 col1, col2 = st.columns([3, 1])
 with col1:
     user_input = st.text_area("Enter your text below:", height=350)
